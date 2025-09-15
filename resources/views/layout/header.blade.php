@@ -14,7 +14,7 @@
     <body>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Auth App</a>
+                <a class="navbar-brand" href="{{ route('home') }}">Auth App</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -32,7 +32,7 @@
                             <a
                                 class="nav-link active"
                                 aria-current="page"
-                                href="#"
+                                href="{{ route('home') }}"
                                 >Home</a
                             >
                         </li>
@@ -44,7 +44,7 @@
                         <a href="#" class="btn btn-sm btn-outline-dark"
                             >Login</a
                         >
-                        <a href="#" class="btn btn-sm btn-secondary ms-2"
+                        <a href="{{ route('register') }}" class="btn btn-sm btn-secondary ms-2"
                             >Register</a
                         >
                     </div>

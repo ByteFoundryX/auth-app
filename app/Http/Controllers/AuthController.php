@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -43,6 +44,50 @@ class AuthController extends Controller
 
 
          return redirect()->route('register')->with('success' , 'موفقیا امیز بود ');
+    }
+
+
+
+
+
+     
+    public function login()
+    {
+        return view('auth.login');
+    }
+
+
+
+
+
+        
+    public function loginPost( Request $request)
+    {
+         $request->validate([
+
+            'email' => 'required|email|exists:users',
+            'password' => 'required|min:5',
+
+         ]);
+
+         $user = User::where('email' , $request->email)->first();
+         if(!$user)
+         {
+            return redirect()->back()->with('error' , 'ایمیل شما صحیح نیست ');
+         }
+
+
+         if (!Hash::check($request->password, $user->password)) 
+            {
+        return redirect()->back()->with('error', 'پسورد صحیح نیست');
+    }
+
+
+    Auth::login($user);
+    $request->session()->regenerate();
+      return redirect()->route('home')->with('success' , 'موفقیا امیز بود ');
+
+
     }
 
 

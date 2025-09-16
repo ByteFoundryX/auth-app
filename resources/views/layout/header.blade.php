@@ -41,12 +41,20 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-sm btn-outline-dark"
+                        @guest
+                               <a href="{{ route('login') }}" class="btn btn-sm btn-outline-dark"
                             >Login</a
                         >
-                        <a href="{{ route('register') }}" class="btn btn-sm btn-secondary ms-2"
+
+                        @endguest
+                     
+                        @guest
+                                 <a href="{{ route('register') }}" class="btn btn-sm btn-secondary ms-2"
                             >Register</a
                         >
+
+                        @endguest
+                   
                     </div>
                 </div>
             </div>

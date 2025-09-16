@@ -1,6 +1,9 @@
 @extends('layout.master')
 
 @section('content')
+           @if (session()->has('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+             @endif
     <div class="col-12 col-md-10">
         <div class="card">
             <div class="card-body text-center">

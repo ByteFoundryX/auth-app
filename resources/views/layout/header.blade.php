@@ -41,14 +41,20 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        @guest
+                        
+                        @auth
+                        <h4>{{ auth()->user()->name }}</h4>
+                         <a href="{{ route('logout') }}" class="btn btn-sm btn-secondary ms-2"
+                            >logout</a
+                        >
+
+                        @endauth
+                     
+                        @guest         
                                <a href="{{ route('login') }}" class="btn btn-sm btn-outline-dark"
                             >Login</a
                         >
 
-                        @endguest
-                     
-                        @guest
                                  <a href="{{ route('register') }}" class="btn btn-sm btn-secondary ms-2"
                             >Register</a
                         >

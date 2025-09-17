@@ -56,7 +56,7 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-
+ 
 
 
 
@@ -80,7 +80,7 @@ class AuthController extends Controller
          if (!Hash::check($request->password, $user->password)) 
             {
         return redirect()->back()->with('error', 'پسورد صحیح نیست');
-    }
+         }
 
 
     Auth::login($user);
@@ -88,7 +88,26 @@ class AuthController extends Controller
       return redirect()->route('home')->with('success' , 'موفقیا امیز بود ');
 
 
+
+
+
     }
+
+
+
+
+    public function logout(Request $request)
+    {
+      Auth::logout();
+      $request->session()->invalidate();
+      $request->session()->regenerateToken();
+
+      return redirect()->route('home');
+
+    }
+
+
+
 
 
 }

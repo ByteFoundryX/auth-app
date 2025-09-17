@@ -2,6 +2,9 @@
 @extends('layout.master')
 
 @section('content')
+
+    
+
     <div class="col-12 col-md-6">
         <div class="card">
             <h5 class="card-header">Register</h5>
@@ -41,4 +44,5 @@
             </div>
         </div>
     </div>
+
 @endsection

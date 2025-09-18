@@ -29,6 +29,8 @@
                     </div>
                     <button type="submit" class="btn btn-secondary">Submit</button>
                 </form>
+
+                <a href="{{ route("forget.password") }}"> ForgetPassword</a>
             </div>
         </div>
     </div>

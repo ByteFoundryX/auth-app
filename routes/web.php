@@ -38,3 +38,5 @@ Route::get('/posts', [PostController::class, 'index'])->name('post.index')->midd
 //forgetpassword
 Route::get('/forget-password', [ForgetPasswordController::class, 'forgetPassword'])->name('forget.password');
 Route::post('/forget-password', [ForgetPasswordController::class, 'forgetPasswordPost'])->name('forget.password.post');
+Route::get('/reset-password/{token}', [ForgetPasswordController::class, 'resetPassword'])->name('reset.password');
+Route::post('/reset-password', [ForgetPasswordController::class, 'resetPasswordPost'])->name('reset.password.post');

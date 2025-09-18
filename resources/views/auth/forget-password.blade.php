@@ -6,21 +6,21 @@
         <div class="card">
             <h5 class="card-header">Foregt Password</h5>
             <div class="card-body">
-                {{-- @if (session()->has('error'))
+                @if (session()->has('error'))
                     <div class="alert alert-danger">{{ session('error') }}</div>
                 @endif
                 @if (session()->has('success'))
                     <div class="alert alert-success">{{ session('success') }}</div>
-                @endif --}}
+                @endif
                 <form accept="{{ route('forget.password.post') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" name="email" class="form-control">
                         <div class="form-text text-danger">
-                            {{-- @error('email')
+                            @error('email')
                                 {{ $message }}
-                            @enderror --}}
+                            @enderror
                         </div>
                     </div>
                     <button type="submit" class="btn btn-secondary">Submit</button>

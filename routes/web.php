@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,3 +26,9 @@ Route::post('/login', [AuthController::class , 'loginPost'])->name('login.post')
 
 //logout
 Route::get('/logout', [AuthController::class , 'logout'])->name('logout');
+
+
+
+//post
+
+Route::get('/posts', [PostController::class, 'index'])->name('post.index')->middleware('auth');

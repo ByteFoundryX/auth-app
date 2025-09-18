@@ -37,7 +37,7 @@
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Posts</a>
+                            <a class="nav-link" href="{{ route('post.index') }}">Posts</a>
                         </li>
                     </ul>
                     <div class="d-flex">
